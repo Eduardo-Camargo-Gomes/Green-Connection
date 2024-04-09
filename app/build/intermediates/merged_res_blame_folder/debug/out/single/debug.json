@@ -1,0 +1,130 @@
+[
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.greenconnect.app-main-50:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/drawable_botoes.xml.flat",
+        "source": "com.example.greenconnect.app-main-50:/drawable/botoes.xml"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.greenconnect.app-main-50:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.greenconnect.app-main-50:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/drawable_lupa_2.png.flat",
+        "source": "com.example.greenconnect.app-main-50:/drawable/lupa_2.png"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.greenconnect.app-main-50:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/layout_splash_screen.xml.flat",
+        "source": "com.example.greenconnect.app-main-50:/layout/splash_screen.xml"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/drawable_plant.png.flat",
+        "source": "com.example.greenconnect.app-main-50:/drawable/plant.png"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/drawable_google.png.flat",
+        "source": "com.example.greenconnect.app-main-50:/drawable/google.png"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.greenconnect.app-main-50:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.greenconnect.app-main-50:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.greenconnect.app-main-50:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.greenconnect.app-main-50:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.greenconnect.app-main-50:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.greenconnect.app-main-50:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/drawable_icone_email.png.flat",
+        "source": "com.example.greenconnect.app-main-50:/drawable/icone_email.png"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/drawable_mais.png.flat",
+        "source": "com.example.greenconnect.app-main-50:/drawable/mais.png"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/drawable_tres_pontos.png.flat",
+        "source": "com.example.greenconnect.app-main-50:/drawable/tres_pontos.png"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/drawable_botao_redondo_da_conta_com_o_usuario_dentro.png.flat",
+        "source": "com.example.greenconnect.app-main-50:/drawable/botao_redondo_da_conta_com_o_usuario_dentro.png"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.greenconnect.app-main-50:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/drawable_botao_redondo_da_conta_com_o_usuario_dentro__1_.png.flat",
+        "source": "com.example.greenconnect.app-main-50:/drawable/botao_redondo_da_conta_com_o_usuario_dentro__1_.png"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/drawable_icone_google.png.flat",
+        "source": "com.example.greenconnect.app-main-50:/drawable/icone_google.png"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/layout_tela_inicial.xml.flat",
+        "source": "com.example.greenconnect.app-main-50:/layout/tela_inicial.xml"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.greenconnect.app-main-50:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.greenconnect.app-main-50:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/xml_backup_rules.xml.flat",
+        "source": "com.example.greenconnect.app-main-50:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/font_inter_bold.xml.flat",
+        "source": "com.example.greenconnect.app-main-50:/font/inter_bold.xml"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/drawable_icone_planta.png.flat",
+        "source": "com.example.greenconnect.app-main-50:/drawable/icone_planta.png"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/font_open_sans.xml.flat",
+        "source": "com.example.greenconnect.app-main-50:/font/open_sans.xml"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/drawable_plantatf.png.flat",
+        "source": "com.example.greenconnect.app-main-50:/drawable/plantatf.png"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/font_montserrat_extrabold.xml.flat",
+        "source": "com.example.greenconnect.app-main-50:/font/montserrat_extrabold.xml"
+    },
+    {
+        "merged": "com.example.greenconnect.app-merged_res-48:/drawable_editar_2.png.flat",
+        "source": "com.example.greenconnect.app-main-50:/drawable/editar_2.png"
+    }
+]

@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.example.greenconnect.app-mergeDebugResources-47:/layout/tela_inicial.xml",
+        "source": "com.example.greenconnect.app-main-50:/layout/tela_inicial.xml"
+    },
+    {
+        "merged": "com.example.greenconnect.app-mergeDebugResources-47:/layout/splash_screen.xml",
+        "source": "com.example.greenconnect.app-main-50:/layout/splash_screen.xml"
+    }
+]

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/branco"
+    android:paddingTop="?attr/actionBarSize">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_extrabold"
+        android:text="Conexão Verde"
+        android:textColor="@color/preto"
+        android:textColorHint="@color/preto"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="-1dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/open_sans"
+        android:text="Bem-vindo(a) ao Green Connect  "
+        android:textColor="@color/preto"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="117dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="220dp"
+        android:layout_height="64dp"
+        android:backgroundTint="@color/verde"
+        android:fontFamily="@font/open_sans"
+        android:text="O Green Connect é uma ferramenta para auxiliar no monitoriamento do seu plantio"
+        android:textColor="@color/preto"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="163dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/plant"
+        tools:layout_editor_absoluteX="155dp"
+        tools:layout_editor_absoluteY="266dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button"
+        android:layout_width="178dp"
+        android:layout_height="33dp"
+        android:background="@drawable/botoes"
+        android:backgroundTint="@color/verde"
+        android:text="Cadastro"
+        android:textColor="@color/branco"
+        tools:layout_editor_absoluteX="97dp"
+        tools:layout_editor_absoluteY="501dp"
+
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button2"
+        android:layout_width="178dp"
+        android:layout_height="33dp"
+        android:background="@drawable/botoes"
+        android:backgroundTint="@color/verde"
+        android:text="Login"
+        android:textColor="@color/branco"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="422dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button3"
+        android:layout_width="178dp"
+        android:layout_height="33dp"
+        android:background="@drawable/botoes"
+        android:backgroundTint="@color/branco"
+        android:text="Ignorar"
+        android:textColor="@color/verde"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="564dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
