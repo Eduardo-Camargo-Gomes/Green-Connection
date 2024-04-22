@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Tela_Configuracao">
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="200dp"
+        android:fontFamily="@font/montserrat_extrabold"
+        android:text="Verde"
+        android:textColor="@color/verde"
+        android:textColorHint="@color/preto"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView12"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/lupa_2" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/tres_pontos" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/montserrat_extrabold"
+        android:text="Conexão"
+        android:textColor="@color/preto"
+        android:textColorHint="@color/preto"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/textView11"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnknownIdInLayout" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="100dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_Conta"
+        android:layout_width="270dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/botoes"
+        android:backgroundTint="@color/verde"
+        android:text="Conta"
+        android:textColor="@color/branco"
+        app:layout_constraintBottom_toTopOf="@+id/button_Notificacoes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_Desenvolvedores"
+        android:layout_width="270dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/botoes"
+        android:backgroundTint="@color/verde"
+        android:padding="16dp"
+        android:text="Desenvolvedores"
+        android:textColor="@color/branco"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_Ajuda" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_Notificacoes"
+        android:layout_width="270dp"
+        android:layout_height="57dp"
+        android:background="@drawable/botoes"
+        android:backgroundTint="@color/verde"
+        android:text="Notificaçãoes"
+        android:textColor="@color/branco"
+        app:layout_constraintBottom_toTopOf="@+id/button_Arquivos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_Conta" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_Lixeira"
+        android:layout_width="270dp"
+        android:layout_height="57dp"
+        android:background="@drawable/botoes"
+        android:backgroundTint="@color/verde"
+        android:text="Lixeira"
+
+        android:textColor="@color/branco"
+        app:layout_constraintBottom_toTopOf="@+id/button_Ajuda"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_Arquivos" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_Ajuda"
+        android:layout_width="270dp"
+        android:layout_height="57dp"
+        android:background="@drawable/botoes"
+        android:backgroundTint="@color/verde"
+        android:text="Ajuda"
+        android:textColor="@color/branco"
+        app:layout_constraintBottom_toTopOf="@+id/button_Desenvolvedores"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_Lixeira" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_Arquivos"
+        android:layout_width="270dp"
+        android:layout_height="57dp"
+        android:background="@drawable/botoes"
+        android:backgroundTint="@color/verde"
+        android:text="Arquivos"
+        android:textColor="@color/branco"
+        app:layout_constraintBottom_toTopOf="@+id/button_Lixeira"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_Notificacoes" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="button_Conta" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

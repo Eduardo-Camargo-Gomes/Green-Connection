@@ -76,59 +76,54 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.43"
         app:srcCompat="@drawable/plant" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="252dp"
+        android:id="@+id/button_Cadastro"
+        android:layout_width="228dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/botoes"
         android:backgroundTint="@color/verde"
+
         android:text="Cadastro"
         android:textColor="@color/branco"
-
-        app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.294" />
+        app:layout_constraintTop_toBottomOf="@+id/button_Login" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button3"
-        android:layout_width="115dp"
-        android:layout_height="53dp"
+        android:id="@+id/button_Ignorar"
+        android:layout_width="228dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/botoes"
         android:backgroundTint="@color/branco"
         android:text="Ignorar"
         android:textColor="@color/verde"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.851" />
+        app:layout_constraintTop_toBottomOf="@+id/button_Cadastro" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/button_Login"
+        android:layout_width="228dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/botoes"
         android:backgroundTint="@color/verde"
         android:text="Login"
         android:textColor="@color/branco"
-        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.94" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

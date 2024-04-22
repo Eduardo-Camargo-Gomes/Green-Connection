@@ -3,9 +3,9 @@ package com.example.greenconnect
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class tela_login : AppCompatActivity() {
+class Tela_Inicial : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.tela_login)
+        setContentView(R.layout.tela_inicial)
     }
 }

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Tela_ModificarDados">
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat_extrabold"
+        android:text="Conexão"
+        android:textColor="@color/preto"
+        android:textColorHint="@color/preto"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnknownIdInLayout" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="148dp"
+        android:layout_height="142dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider3"
+        app:srcCompat="@drawable/botao_redondo_da_conta_com_o_usuario_dentro" />
+
+    <EditText
+        android:id="@+id/editTextNome"
+        android:layout_width="339dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/verde"
+        android:ems="10"
+        android:hint="Nome da planta"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/editTextValorDaAgua"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="47dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/tres_pontos" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_EsqueciSenha"
+        android:layout_width="180dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/botoes"
+
+        android:backgroundTint="@color/branco"
+        android:text="Cancelar"
+        android:textColor="@color/verde"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextUmidadeSolo"
+        android:layout_width="339dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/verde"
+        android:ems="10"
+        android:hint="Umidade do Solo"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/editTextDescricaoPlaca"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextDescricaoPlaca"
+        android:layout_width="339dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="28dp"
+        android:backgroundTint="@color/verde"
+        android:ems="10"
+        android:hint="Descrição da placa"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTemperaturaIdeal"
+        android:layout_width="339dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/verde"
+        android:ems="10"
+        android:hint="Temperatura Ideal"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/editTextUmidadeSolo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button5"
+        android:layout_width="180dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/botoes"
+        android:backgroundTint="@color/verde"
+        android:padding="16dp"
+        android:text="Salvar Alteração"
+        android:textColor="@color/branco"
+        app:layout_constraintBottom_toTopOf="@+id/button_EsqueciSenha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextValorDaAgua"
+        android:layout_width="339dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/verde"
+        android:ems="10"
+        android:hint="Quantidade de água"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTemperaturaIdeal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_extrabold"
+        android:text="Verde"
+        android:textColor="@color/verde"
+        android:textColorHint="@color/preto"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView12"
+        app:layout_constraintStart_toEndOf="@+id/textView12"
+        app:layout_constraintTop_toTopOf="@+id/textView12" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,13 +13,49 @@
         android:theme="@style/Theme.GreenConnect"
         tools:targetApi="31">
         <activity
-            android:name=".spash_screen2"
+            android:name=".Tela_ModificarDados"
             android:exported="false" />
         <activity
-            android:name=".tela_inicial2"
+            android:name=".Tela_PerfilPlanta"
             android:exported="false" />
         <activity
-            android:name=".tela_login"
+            android:name=".Tela_CadastroDePlanta"
+            android:exported="false" />
+        <activity
+            android:name=".Tela_ExcluirConta"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityMain"
+            android:exported="false" />
+        <activity
+            android:name=".Tela_Desenvolvedores"
+            android:exported="false" />
+        <activity
+            android:name=".Tela_Lixeira"
+            android:exported="false" />
+        <activity
+            android:name=".Tela_Arquivados"
+            android:exported="false" />
+        <activity
+            android:name=".Tela_ConfigConta"
+            android:exported="false" />
+        <activity
+            android:name=".Tela_Configuracao"
+            android:exported="false" />
+        <activity
+            android:name=".Tela_HomePage"
+            android:exported="false" />
+        <activity
+            android:name=".Tela_EsqueciSenha"
+            android:exported="false" />
+        <activity
+            android:name=".splash_screen"
+            android:exported="false" />
+        <activity
+            android:name=".Tela_Inicial"
+            android:exported="false" />
+        <activity
+            android:name=".Tela_FormaDeLogin"
             android:exported="false" />
         <activity
             android:name=".Tela_Cadastro"
