@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.example.green_connect" />
+                  <option name="mobileSdkAppId" value="1:96728314722:android:005c46e024f75bf2f5f23b" />
+                  <option name="projectId" value="green-connect-ecg" />
+                  <option name="projectNumber" value="96728314722" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Green-Connect</string>
     <string name="dotted">&#8226;</string>
+    <string name="edit_usuario">Usuário</string>
+    <string name="edit_senha">Senha</string>
+    <string name="botao_entrar">Entrar</string>
+    <string name="text_ou8">ou</string>
 </resources>

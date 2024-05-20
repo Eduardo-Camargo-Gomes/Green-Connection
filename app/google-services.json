@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "96728314722",
+    "project_id": "green-connect-ecg",
+    "storage_bucket": "green-connect-ecg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:96728314722:android:005c46e024f75bf2f5f23b",
+        "android_client_info": {
+          "package_name": "com.example.green_connect"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAekjU1VQu7sscXT1Vi0cKWpnWhQ4whvqE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
