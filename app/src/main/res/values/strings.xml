@@ -1,8 +1,16 @@
 <resources>
-    <string name="app_name">Green-Connect</string>
-    <string name="dotted">&#8226;</string>
+    <string name="app_name">Green Connect</string>
+    <string name="google_sign_in_button">Google</string>
+    <string name="email_empty_error">Campo de email não pode estar em branco</string>
+    <string name="password_empty_error">Campo de senha não pode estar em branco</string>
+    <string name="google_auth_success">Autenticação Efetuada com o Google</string>
+    <string name="google_auth_error">Erro de autenticação com o Google!</string>
+    <string name="auth_success">Autenticação Efetuada</string>
+    <string name="auth_error">Erro de autenticação!</string>
+    <string name="user_logged_in">Usuário %1$s logado</string>
     <string name="edit_usuario">Usuário</string>
     <string name="edit_senha">Senha</string>
-    <string name="botao_entrar">Entrar</string>
-    <string name="text_ou8">ou</string>
+    <string name="descricao_tempo">RELOGIO</string>
+    <string name="descricao_buscar">Pesquisa</string>
+    <string name="descricao_listar">Listar</string>
 </resources>

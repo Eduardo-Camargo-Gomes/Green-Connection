@@ -58,7 +58,7 @@
             app:layout_constraintTop_toBottomOf="@+id/TextGreen" />
 
         <EditText
-            android:id="@+id/emialUsuario"
+            android:id="@+id/emailUsuario"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_marginTop="8dp"
@@ -82,7 +82,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.059"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emialUsuario" />
+            app:layout_constraintTop_toBottomOf="@+id/emailUsuario" />
 
         <EditText
             android:id="@+id/editTextTextPassword"
@@ -119,7 +119,8 @@
             app:layout_constraintHorizontal_bias="0.695"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="388dp" />
+            tools:layout_editor_absoluteY="388dp"
+            tools:layout_editor_absoluteX="388dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -129,7 +130,8 @@
             app:layout_constraintHorizontal_bias="0.272"
             app:layout_constraintStart_toEndOf="@+id/textcadastresecom"
             tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="388dp" />
+            tools:layout_editor_absoluteY="388dp"
+            tools:layout_editor_absoluteX="388dp"/>
 
         <com.google.android.gms.common.SignInButton
             android:id="@+id/buttonGOOGLE"
@@ -169,7 +171,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:background="@drawable/botaoverdeclaro"
-            android:backgroundTint="@color/VerdeClaro"
             android:text="Fazer Login"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"

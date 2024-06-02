@@ -1,23 +1,31 @@
 package com.example.green_connect
 
-import android.content.ContentValues.TAG
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.text.TextUtils
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import com.example.green_connect.databinding.ActivityTelaLogarBinding
+import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.auth.ktx.auth
 
-class Tela_logar : AppCompatActivity() {
-
+class TelaLogar : AppCompatActivity() {
+    // Variáveis para binding, cliente de login do Google e autenticação do Firebase
     private lateinit var binding: ActivityTelaLogarBinding
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var auth: FirebaseAuth
@@ -25,63 +33,119 @@ class Tela_logar : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTelaLogarBinding.inflate(layoutInflater)
-        val view = binding.root
-        enableEdgeToEdge()
-        setContentView(view)
+        setContentView(binding.root)
+        enableEdgeToEdge()  // Habilitar borda a borda para UI
 
-        auth = Firebase.auth
+        auth = Firebase.auth  // Inicializar autenticação do Firebase
 
-        // Editar o valor de texto do botão do Google
+        // Configurar opções de login do Google
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken("96728314722-2hktnd64dc6afd0djugoba4aicmcsqv3.apps.googleusercontent.com")
+            .requestEmail()
+            .build()
+
+        // Criar cliente de login do Google
+        googleSignInClient = GoogleSignIn.getClient(this, gso)
+
+        // Modificar o texto do botão do Google
         val textBotaoCadastrarGoogle = binding.buttonGOOGLE.getChildAt(0) as TextView
-        textBotaoCadastrarGoogle.text = "Google"
+        textBotaoCadastrarGoogle.text = getString(R.string.google_sign_in_button)
 
-        if(binding.emialUsuario.text.isNullOrEmpty()){
-            Toast.makeText(baseContext, "Digite um email cadastrado", Toast.LENGTH_SHORT).show()
-        }else if(binding.editTextTextPassword.text.isNullOrEmpty()){
-            Toast.makeText(baseContext, "Digite uma senha", Toast.LENGTH_SHORT).show()
-        }else{
-            loginUsuarioSenha(binding.emialUsuario.text.toString(), binding.editTextTextPassword.text.toString())
+        // Configurar ação do botão de login com email e senha
+        binding.ButtonLogar.setOnClickListener {
+            val email = binding.emailUsuario.text.toString()
+            val senha = binding.editTextTextPassword.text.toString()
+
+            if (TextUtils.isEmpty(email)) {
+                binding.emailUsuario.error = getString(R.string.email_empty_error)
+            } else if (TextUtils.isEmpty(senha)) {
+                binding.editTextTextPassword.error = getString(R.string.password_empty_error)
+            } else {
+                loginUsuarioSenha(email, senha)
+            }
         }
 
-        loginUsuarioSenha(binding.emialUsuario.text.toString(), binding.editTextTextPassword.text.toString())
+        // Configurar ação do botão de login com Google
+        binding.buttonGOOGLE.setOnClickListener {
+            cliqueBotaoGoogle()
+        }
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+        // Ajustar padding da view principal para lidar com as barras do sistema
+        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
+            v.updatePadding(
+                top = insets.getInsets(WindowInsetsCompat.Type.systemBars()).top,
+                bottom = insets.getInsets(WindowInsetsCompat.Type.systemBars()).bottom
+            )
             insets
         }
     }
 
-    private fun loginUsuarioSenha(usuario: String, senha: String) {
-        binding.ButtonLogar.setOnClickListener {
-            auth.signInWithEmailAndPassword(
-                usuario, senha
-            ).addOnCompleteListener(this) { task ->
+    // Método para iniciar o fluxo de login com Google
+    private fun cliqueBotaoGoogle() {
+        val signInIntent = googleSignInClient.signInIntent
+        abreActivity.launch(signInIntent)
+    }
+
+    // Callback para receber o resultado da atividade de login do Google
+    private val abreActivity = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            val intent = result.data
+            val task = GoogleSignIn.getSignedInAccountFromIntent(intent)
+            try {
+                val conta = task.getResult(ApiException::class.java)
+                loginComGoogle(conta.idToken)
+            } catch (exception: ApiException) {
+                Toast.makeText(baseContext, getString(R.string.google_auth_error), Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    // Método para autenticar com Firebase usando o token do Google
+    private fun loginComGoogle(token: String?) {
+        if (token != null) {
+            val credential = GoogleAuthProvider.getCredential(token, null)
+            auth.signInWithCredential(credential).addOnCompleteListener(this)
+            { task: Task<AuthResult> ->
                 if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-                    val user = auth.currentUser
+                    Toast.makeText(baseContext, "Autenticação efetuada com o Google", Toast.LENGTH_SHORT).show()
                     abreMenu()
                 } else {
-                    // If sign in fails, display a message to the user.
-                    Toast.makeText(baseContext, "Erro de autenticação!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(baseContext, "Erro de autenticação com o Google", Toast.LENGTH_SHORT).show()
                 }
             }
         }
     }
 
-    fun abreMenu() {
-        Toast.makeText(baseContext, "Autenticação Efetuada", Toast.LENGTH_SHORT).show()
-        binding.emialUsuario.text.clear()
+    // Método para autenticar com Firebase usando email e senha
+    private fun loginUsuarioSenha(email: String, senha: String) {
+        auth.signInWithEmailAndPassword(email, senha).addOnCompleteListener(this) { task ->
+            if (task.isSuccessful) {
+                Toast.makeText(baseContext, getString(R.string.auth_success), Toast.LENGTH_SHORT).show()
+                abreMenu()
+            } else {
+                Toast.makeText(baseContext, getString(R.string.auth_error), Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    // Método para abrir a tela principal após login bem-sucedido
+    private fun abreMenu() {
+        binding.emailUsuario.text.clear()
         binding.editTextTextPassword.text.clear()
         val intent = Intent(this, Tela_Menu::class.java)
         startActivity(intent)
         finish()
     }
 
-    public override fun onStart() {
+    // Método para verificar se já há um usuário logado ao iniciar a atividade
+    override fun onStart() {
         super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
-        //val currentUser = auth.currentUser
-        //updateUI(currentUser)
+        val currentUser = auth.currentUser
+        if (currentUser != null && !TextUtils.isEmpty(currentUser.email)) {
+            Toast.makeText(baseContext, getString(R.string.user_logged_in, currentUser.email), Toast.LENGTH_SHORT).show()
+            abreMenu()
+        }
     }
 }

@@ -58,7 +58,7 @@
             app:layout_constraintTop_toBottomOf="@+id/TextGreen" />
 
         <EditText
-            android:id="@+id/emialUsuario"
+            android:id="@+id/emailUsuario"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_marginTop="8dp"
@@ -82,7 +82,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.059"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emialUsuario" />
+            app:layout_constraintTop_toBottomOf="@+id/emailUsuario" />
 
         <EditText
             android:id="@+id/editTextTextPassword"
@@ -169,8 +169,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:background="@drawable/botaoverdeclaro"
-            android:backgroundTint="@color/VerdeClaro"
+            android:background="@drawable/drawable_bottonsemfundo"
             android:text="Cadastrar"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
@@ -194,6 +193,7 @@
             android:layout_width="106dp"
             android:layout_height="49dp"
             android:layout_marginTop="8dp"
+            android:background="@drawable/drawable_bottonsemfundo"
             android:text="Email"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.239"
