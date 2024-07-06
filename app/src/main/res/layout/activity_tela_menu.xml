@@ -1,4 +1,5 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,19 +8,40 @@
     android:background="@color/Verde"
     tools:context=".Tela_Menu">
 
-    <Button
-        android:id="@+id/buttonSair"
+    <TextView
+        android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        android:text="/sair"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Recentes"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:tabBackground="@color/Verde"
+        app:tabIndicatorColor="@color/white"
+        app:tabTextAppearance="@style/CustomTabLayout"
+        app:tabTextColor="@color/white" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonBuscar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabs"
+        app:layout_constraintVertical_bias="0.5" />
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -27,24 +49,22 @@
         android:layout_height="48dp"
         android:layout_marginStart="48dp"
         android:layout_marginBottom="36dp"
-        android:src="@drawable/carbon_time"
         android:contentDescription="@string/descricao_tempo"
+        android:src="@drawable/carbon_time"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/buttonBuscar"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="40dp"
-        android:src="@drawable/vector"
+        android:layout_marginBottom="36dp"
         android:contentDescription="@string/descricao_buscar"
+        android:src="@drawable/vector"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonListar"
-        app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageButton" />
 
     <ImageButton
         android:id="@+id/buttonListar"
@@ -52,18 +72,17 @@
         android:layout_height="48dp"
         android:layout_marginEnd="52dp"
         android:layout_marginBottom="36dp"
-        android:src="@drawable/tabler_align_right"
         android:contentDescription="@string/descricao_listar"
+        android:src="@drawable/tabler_align_right"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <View
         android:id="@+id/divider2"
         android:layout_width="150dp"
         android:layout_height="5dp"
         android:layout_marginBottom="24dp"
-        android:background="?android:attr/listDivider"
+        android:background="@color/VerdeClaro"
         app:layout_constraintBottom_toTopOf="@+id/buttonBuscar"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -72,10 +91,20 @@
         android:layout_width="150dp"
         android:layout_height="5dp"
         android:layout_marginBottom="24dp"
-        android:background="?android:attr/listDivider"
+        android:background="@color/VerdeClaro"
         app:layout_constraintBottom_toTopOf="@+id/buttonListar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/divider2" />
+
+    <android.widget.Button
+        android:id="@+id/button_CreatePlants"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/pajamas_file_addition_solid"
+        app:layout_constraintBottom_toTopOf="@+id/buttonListar"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

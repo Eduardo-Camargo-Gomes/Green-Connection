@@ -132,11 +132,15 @@ class TelaLogar : AppCompatActivity() {
 
     // Método para abrir a tela principal após login bem-sucedido
     private fun abreMenu() {
-        binding.emailUsuario.text.clear()
-        binding.editTextTextPassword.text.clear()
+        limpaCampos()
         val intent = Intent(this, Tela_Menu::class.java)
         startActivity(intent)
         finish()
+    }
+
+    private fun limpaCampos() {
+        binding.emailUsuario.text.clear()
+        binding.editTextTextPassword.text.clear()
     }
 
     // Método para verificar se já há um usuário logado ao iniciar a atividade

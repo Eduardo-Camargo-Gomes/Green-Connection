@@ -59,7 +59,7 @@
 
         <EditText
             android:id="@+id/emailUsuario"
-            android:layout_width="wrap_content"
+            android:layout_width="333dp"
             android:layout_height="50dp"
             android:layout_marginTop="8dp"
             android:ems="13"
@@ -68,7 +68,7 @@
             android:inputType="textEmailAddress"
             android:labelFor="@id/textEmail"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.181"
+            app:layout_constraintHorizontal_bias="0.518"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textEmail" />
 
@@ -86,7 +86,7 @@
 
         <EditText
             android:id="@+id/editTextTextPassword"
-            android:layout_width="wrap_content"
+            android:layout_width="333dp"
             android:layout_height="50dp"
             android:layout_marginTop="8dp"
             android:ems="13"
@@ -95,7 +95,7 @@
             android:inputType="textPassword"
             android:labelFor="@id/textSenha"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.215"
+            app:layout_constraintHorizontal_bias="0.518"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textSenha" />
 
@@ -115,40 +115,41 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="_____________"
+            app:layout_constraintBottom_toBottomOf="@+id/textcadastresecom"
             app:layout_constraintEnd_toStartOf="@+id/textcadastresecom"
             app:layout_constraintHorizontal_bias="0.695"
             app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="388dp" />
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="_____________"
+            app:layout_constraintBottom_toBottomOf="@+id/textcadastresecom"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.272"
             app:layout_constraintStart_toEndOf="@+id/textcadastresecom"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="388dp" />
+            tools:ignore="MissingConstraints" />
 
         <com.google.android.gms.common.SignInButton
             android:id="@+id/buttonGOOGLE"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="56dp"
-            android:layout_marginTop="8dp"
+            android:layout_width="161dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textcadastresecom" />
 
-        <Button
+        <android.widget.Button
             android:id="@+id/button"
-            android:layout_width="match_parent"
+            android:layout_width="333dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="92dp"
-            android:background="@drawable/drawable_bottonsemfundo"
+            android:layout_marginTop="72dp"
+            android:background="@drawable/button_white"
             android:text="Faça Login em uma conta existente"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.407"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonGOOGLE" />
 
@@ -164,12 +165,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/TextGreen" />
 
-        <Button
+        <android.widget.Button
             android:id="@+id/ButtonCadastar"
-            android:layout_width="wrap_content"
+            android:layout_width="333dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:background="@drawable/drawable_bottonsemfundo"
+            android:background="@drawable/button_lightgreen"
             android:text="Cadastrar"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
@@ -188,15 +189,15 @@
             app:layout_constraintTop_toBottomOf="@+id/buttonGOOGLE"
             app:layout_constraintVertical_bias="0.323" />
 
-        <Button
+        <android.widget.Button
             android:id="@+id/buttonEmail"
-            android:layout_width="106dp"
+            android:layout_width="180dp"
             android:layout_height="49dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/drawable_bottonsemfundo"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_white"
             android:text="Email"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.239"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/buttonGOOGLE"
             app:layout_constraintTop_toBottomOf="@+id/textcadastresecom" />
     </androidx.constraintlayout.widget.ConstraintLayout>

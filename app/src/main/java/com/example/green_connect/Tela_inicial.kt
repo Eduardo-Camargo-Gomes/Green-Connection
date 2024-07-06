@@ -24,6 +24,7 @@ class Tela_inicial : AppCompatActivity() {
         // Lida com o clique do botão de cadastro
         val buttonCadastrar = findViewById<Button>(R.id.ButtonCadastar)
         buttonCadastrar.setOnClickListener {
+            // Inicia a tela de cadastro
             val intent = Intent(this, Tela_Cadastro::class.java)
             startActivity(intent)
         }
@@ -31,13 +32,14 @@ class Tela_inicial : AppCompatActivity() {
         // Lida com o clique do botão de login
         val buttonLogar = findViewById<Button>(R.id.buttonLogar)
         buttonLogar.setOnClickListener {
+            // Inicia a tela de login
             val intent = Intent(this, TelaLogar::class.java)
             startActivity(intent)
         }
 
         // Drawable para os indicadores de página
-        val VerdeEscuroDrawable = ContextCompat.getDrawable(baseContext, R.drawable.backgrund_button)
-        val BrancoDrawable = ContextCompat.getDrawable(baseContext, R.drawable.drawable_bottonsemfundo)
+        val VerdeEscuroDrawable = ContextCompat.getDrawable(baseContext, R.drawable.button_lightgreen)
+        val BrancoDrawable = ContextCompat.getDrawable(baseContext, R.drawable.button_darkgreen)
 
         // Ajusta o preenchimento da visualização principal para levar em conta as inserções do sistema
         val mainView = findViewById<View>(R.id.main)

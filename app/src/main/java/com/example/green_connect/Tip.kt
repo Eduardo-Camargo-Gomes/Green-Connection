@@ -1,6 +1,5 @@
 package com.example.green_connect
 
-import android.text.style.BackgroundColorSpan
 import androidx.annotation.DrawableRes
 
 // Classe de dados Tip que representa uma dica a ser exibida na tela introdutória

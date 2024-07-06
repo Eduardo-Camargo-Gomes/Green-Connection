@@ -41,7 +41,8 @@ class Tela_Cadastro : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(view)
 
-        auth = Firebase.auth  // Inicializa a autenticação do Firebase
+        // Inicializa a autenticação do Firebase
+        auth = Firebase.auth
 
         // Configura opções de login do Google
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -63,7 +64,14 @@ class Tela_Cadastro : AppCompatActivity() {
 
         // Configura o clique do botão de cadastro
         binding.ButtonCadastar.setOnClickListener {
-            // Lógica para o botão de cadastro será adicionada aqui
+            if (TextUtils.isEmpty(binding.emailUsuario.text)) {
+                binding.emailUsuario.error = "Informe o usuário para cadastro"
+            } else if (TextUtils.isEmpty(binding.editTextTextPassword.text)) {
+                binding.editTextTextPassword.error = "Informe a senha para cadastro"
+            } else {
+                criarUsuarioSenha(binding.emailUsuario.text.toString(),
+                    binding.editTextTextPassword.text.toString())
+            }
         }
 
         // Ajusta o padding da view principal para levar em conta as inserções do sistema (como barras de status e navegação)
@@ -98,6 +106,20 @@ class Tela_Cadastro : AppCompatActivity() {
         }
     }
 
+    // Método para criar usuário
+    private fun criarUsuarioSenha( email:String, senha:String){
+        auth.createUserWithEmailAndPassword(email, senha).addOnCompleteListener(this){
+            taks ->
+            if (taks.isSuccessful){
+                Toast.makeText(baseContext, "Usuário criado com sucesso", Toast.LENGTH_SHORT).show()
+                limpaCampos()
+                abreMenu()
+            }else{
+                Toast.makeText(baseContext, "Erro na criação do usuário", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
     // Método para autenticar com Firebase usando o token do Google
     private fun loginComGoogle(token: String?) {
         if (token != null) {
@@ -118,6 +140,11 @@ class Tela_Cadastro : AppCompatActivity() {
         val intent = Intent(this, Tela_Menu::class.java)
         startActivity(intent)
         finish()
+    }
+
+    private fun limpaCampos() {
+        binding.emailUsuario.text.clear()
+        binding.editTextTextPassword.text.clear()
     }
 
     // Método para verificar se já há um usuário logado ao iniciar a atividade

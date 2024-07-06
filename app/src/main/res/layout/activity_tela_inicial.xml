@@ -58,25 +58,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.376" />
 
-    <Button
+    <android.widget.Button
         android:id="@+id/ButtonCadastar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="192dp"
-        android:background="@drawable/backgrund_button"
-        android:backgroundTint="@color/white"
+        android:background="@drawable/button_green"
         android:text="Cadastrar"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/buttonLogar"
         app:layout_constraintHorizontal_bias="0.576"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
-    <Button
+    <android.widget.Button
         android:id="@+id/buttonLogar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="88dp"
-        android:background="@drawable/drawable_bottonsemfundo"
+        android:background="@drawable/button_white"
         android:text="logar"
         app:layout_constraintBottom_toBottomOf="@+id/ButtonCadastar"
         app:layout_constraintEnd_toEndOf="parent"
