@@ -66,7 +66,7 @@ class Tela_Menu : AppCompatActivity() {
     private fun configTabLayout() {
         val adapter = ViewPagerAdapter(this)
         adapter.addFragment(PlantFragment(), "Plantas")
-        adapter.addFragment(PlatesFragment(), "Placas")
+        //adapter.addFragment(PlatesFragment(), "Placas")
 
         binding.viewPager.adapter = adapter
         binding.viewPager.offscreenPageLimit = adapter.itemCount
