@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/preto_cinza"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/text_apresentaçao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginEnd="23dp"
+        android:fontFamily="arial"
+        android:text="Faça sua escolhar QR code ou código de barra"
+        android:textAlignment="center"
+        android:textColor="@color/rocho"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/btnScanQRCode"
+        android:layout_width="224dp"
+        android:layout_height="192dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="154dp"
+        android:layout_marginEnd="90dp"
+        android:background="@drawable/rounded_background"
+        android:clickable="true"
+        android:contentDescription="Scan QR Code"
+        android:focusable="true"
+        android:padding="16dp" />
+
+    <TextView
+        android:id="@+id/textqrcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btnScanQRCode"
+        android:layout_alignTop="@+id/btnScanQRCode"
+        android:layout_alignEnd="@+id/btnScanQRCode"
+        android:layout_alignBottom="@+id/btnScanQRCode"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginBottom="153dp"
+        android:text="Qr code"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/iconeqrcode"
+        android:layout_width="177dp"
+        android:layout_height="168dp"
+        android:layout_alignStart="@+id/btnScanQRCode"
+        android:layout_alignTop="@+id/btnScanQRCode"
+        android:layout_alignEnd="@+id/btnScanQRCode"
+        android:layout_alignBottom="@+id/btnScanQRCode"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginBottom="-8dp"
+        android:src="@drawable/icone_qrcode" />
+
+    <TextView
+        android:id="@+id/text_ou"
+        android:layout_width="68dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="173dp"
+        android:layout_marginTop="371dp"
+        android:layout_marginEnd="169dp"
+        android:fontFamily="arial"
+        android:text="OU"
+        android:textAlignment="center"
+        android:textColor="@color/rocho"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/btnScanBarcode"
+        android:layout_width="224dp"
+        android:layout_height="192dp"
+        android:layout_below="@+id/btnScanQRCode"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="90dp"
+        android:background="@drawable/rounded_background"
+        android:clickable="true"
+        android:contentDescription="Scan Barcode"
+        android:focusable="true"
+        android:padding="16dp" />
+
+    <TextView
+        android:id="@+id/textcdbarra"
+        android:layout_width="149dp"
+        android:layout_height="25dp"
+        android:layout_alignStart="@+id/btnScanBarcode"
+        android:layout_alignTop="@+id/btnScanBarcode"
+        android:layout_alignEnd="@+id/btnScanBarcode"
+        android:layout_alignBottom="@+id/btnScanBarcode"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="155dp"
+        android:text="Código de barra"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/iconecdbarra"
+        android:layout_width="wrap_content"
+        android:layout_height="144dp"
+        android:layout_alignStart="@+id/btnScanBarcode"
+        android:layout_alignTop="@+id/btnScanBarcode"
+        android:layout_alignEnd="@+id/btnScanBarcode"
+        android:layout_alignBottom="@+id/btnScanBarcode"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="1dp"
+        android:src="@drawable/icone_cdbarra" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/rocho_mas_claro"
+        app:menu="@menu/bottom_navigation_menu"/>
+
+</RelativeLayout>

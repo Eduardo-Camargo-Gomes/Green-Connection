@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/preto_cinza"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/text_apresentaçao"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="149dp"
+        android:layout_marginEnd="50dp"
+        android:fontFamily="arial"
+        android:text="Crie seus QR code ou código de barra"
+        android:textAlignment="center"
+        android:textColor="@color/rocho"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/primeiraView"
+        android:layout_width="291dp"
+        android:layout_height="106dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="256dp"
+        android:layout_marginEnd="60dp"
+        android:background="@drawable/rounded_background"
+        android:clickable="true"
+        android:contentDescription="Primeira View"
+        android:focusable="true"
+        android:padding="16dp" />
+
+    <ImageView
+        android:id="@+id/iconeqrcode"
+        android:layout_width="94dp"
+        android:layout_height="80dp"
+        android:layout_alignStart="@+id/primeiraView"
+        android:layout_alignTop="@+id/primeiraView"
+        android:layout_alignEnd="@+id/primeiraView"
+        android:layout_alignBottom="@+id/primeiraView"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="191dp"
+        android:layout_marginBottom="14dp"
+        android:src="@drawable/criar_qrcode" />
+
+    <TextView
+        android:id="@+id/textqrcode"
+        android:layout_width="150dp"
+        android:layout_height="28dp"
+        android:layout_alignStart="@+id/primeiraView"
+        android:layout_alignTop="@+id/primeiraView"
+        android:layout_alignEnd="@+id/primeiraView"
+        android:layout_alignBottom="@+id/primeiraView"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="40dp"
+        android:text="Criar QR code"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/segundaView"
+        android:layout_width="wrap_content"
+        android:layout_height="106dp"
+        android:layout_below="@+id/primeiraView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginEnd="60dp"
+        android:background="@drawable/rounded_background"
+        android:clickable="true"
+        android:contentDescription="Segunda View"
+        android:focusable="true"
+        android:padding="16dp" />
+
+
+    <ImageView
+        android:id="@+id/icone_criarcdbarra"
+        android:layout_width="94dp"
+        android:layout_height="80dp"
+        android:layout_alignStart="@+id/segundaView"
+        android:layout_alignTop="@+id/segundaView"
+        android:layout_alignEnd="@+id/segundaView"
+        android:layout_alignBottom="@+id/segundaView"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="191dp"
+        android:layout_marginBottom="14dp"
+        android:src="@drawable/criar_cdbarra" />
+
+    <TextView
+        android:id="@+id/text_criarcdbarra"
+        android:layout_width="150dp"
+        android:layout_height="28dp"
+        android:layout_alignStart="@+id/segundaView"
+        android:layout_alignTop="@+id/segundaView"
+        android:layout_alignEnd="@+id/segundaView"
+        android:layout_alignBottom="@+id/segundaView"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="40dp"
+        android:text="Criar Código de barra"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/rocho_mas_claro"
+        app:menu="@menu/bottom_navigation_menu"/>
+
+</RelativeLayout>

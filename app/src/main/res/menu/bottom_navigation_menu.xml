@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_leer"
+        android:icon="@drawable/ic_leer"
+        android:title="Ler" />
+    <item
+        android:id="@+id/navigation_criar"
+        android:icon="@drawable/ic_criar"
+        android:title="Criar" />
+    <item
+        android:id="@+id/navigation_historico"
+        android:icon="@drawable/icone_historico"
+        android:title="Histórico" />
+    <item
+        android:id="@+id/navigation_configuracoes"
+        android:icon="@drawable/icone_configuracoes"
+        android:title="Configurações" />
+</menu>

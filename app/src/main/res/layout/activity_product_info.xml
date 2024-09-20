@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/preto_cinza"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/tvBarcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Código de Barras: "
+        android:textSize="18sp"
+        android:textColor="@color/rocho"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data da Leitura: "
+        android:textSize="18sp"
+        android:textColor="@color/rocho"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/btnSearchWeb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pesquisar Produtos na Web"/>
+</LinearLayout>

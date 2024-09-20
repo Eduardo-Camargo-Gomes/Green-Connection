@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email" />
+
+    <EditText
+        android:id="@+id/editAssunto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Assunto"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/editMensagem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mensagem"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/btnPronto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pronto"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"/>
+
+    <ImageView
+        android:id="@+id/qrCodeImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/qr_code_image_description"/>
+</LinearLayout>
