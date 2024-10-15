@@ -8,11 +8,70 @@
     <string name="auth_success">Autenticação Efetuada</string>
     <string name="auth_error">Erro de autenticação!</string>
     <string name="user_logged_in">Usuário %1$s logado</string>
-    <string name="edit_usuario">Usuário</string>
+    <string name="edit_usuario">Email de Usuário</string>
     <string name="edit_senha">Senha</string>
     <string name="descricao_tempo">RELOGIO</string>
     <string name="descricao_buscar">Pesquisa</string>
     <string name="descricao_listar">Listar</string>
+    <string name="profile">Perfil</string>
+    <string name="time">Tempo</string>
+    <string name="search">Buscar</string>
+    <string name="menu">Menu</string>
+    <string name="qr_code">QR Code</string>
+
+    <string-array name="temperaturas_min">
+        <item>0C°</item>
+        <item>5C°</item>
+        <item>10C°</item>
+        <item>15C°</item>
+        <item>20C°</item>
+        <item>25C°</item>
+        <item>30C°</item>
+        <item>35C°</item>
+        <item>40C°</item>
+        <item>45C°</item>
+    </string-array>
+
+    <string-array name="temperaturas_max">
+        <item>25C°</item>
+        <item>30C°</item>
+        <item>35C°</item>
+        <item>40C°</item>
+        <item>45C°</item>
+        <item>50C°</item>
+        <item>55C°</item>
+        <item>60C°</item>
+        <item>65C°</item>
+        <item>70C°</item>
+    </string-array>
+
+    <string-array name="umidade_min">
+        <item>0%</item>
+        <item>10%</item>
+        <item>20%</item>
+        <item>30%</item>
+        <item>40%</item>
+        <item>50%</item>
+        <item>60%</item>
+        <item>70%</item>
+        <item>80%</item>
+        <item>90%</item>
+    </string-array>
+
+    <string-array name="umidade_max">
+        <item>50%</item>
+        <item>60%</item>
+        <item>70%</item>
+        <item>80%</item>
+        <item>90%</item>
+        <item>100%</item>
+        <item>105%</item>
+        <item>110%</item>
+        <item>115%</item>
+        <item>120%</item>
+    </string-array>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_plant_detail">activity_plant_detail</string>
 </resources>

@@ -8,74 +8,41 @@
     android:background="@color/Verde"
     tools:context=".Tela_Menu">
 
+    <!-- Título -->
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Green Connect"
+        android:text="Recentes"
         android:textColor="@color/white"
-        android:textSize="40dp"
+        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabs"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
+    <!-- Linha divisória abaixo do título -->
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/VerdeClaro"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/textView5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:tabBackground="@color/Verde"
-        app:tabIndicatorColor="@color/white"
-        app:tabTextAppearance="@style/CustomTabLayout"
-        app:tabTextColor="@color/white" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPager"
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPlantas"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonBuscar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintBottom_toTopOf="@+id/divider2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabs"
-        app:layout_constraintVertical_bias="0.5" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginBottom="36dp"
-        android:contentDescription="@string/descricao_tempo"
-        android:src="@drawable/carbon_time"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageButton
-        android:id="@+id/buttonBuscar"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="36dp"
-        android:contentDescription="@string/descricao_buscar"
-        android:src="@drawable/vector"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonListar"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton" />
-
-    <ImageButton
-        android:id="@+id/buttonListar"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginBottom="36dp"
-        android:contentDescription="@string/descricao_listar"
-        android:src="@drawable/tabler_align_right"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"/>
 
     <View
         android:id="@+id/divider2"
@@ -97,14 +64,72 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/divider2" />
 
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginBottom="36dp"
+        android:contentDescription="@string/descricao_tempo"
+        android:src="@drawable/carbon_time"
+        android:background="?android:attr/selectableItemBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/buttonBuscar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="36dp"
+        android:contentDescription="@string/descricao_buscar"
+        android:src="@drawable/vector"
+        android:background="?android:attr/selectableItemBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonListar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageButton" />
+
+    <ImageButton
+        android:id="@+id/buttonListar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="36dp"
+        android:contentDescription="@string/descricao_listar"
+        android:background="?android:attr/selectableItemBackground"
+        android:src="@drawable/tabler_align_right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <android.widget.Button
         android:id="@+id/button_CreatePlants"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/pajamas_file_addition_solid"
         app:layout_constraintBottom_toTopOf="@+id/buttonListar"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Elemento para exibir o QR Code -->
+    <ImageView
+        android:id="@+id/imageViewQRCode"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewPlantas"
+        app:layout_constraintBottom_toTopOf="@+id/button_CreatePlants"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone" /> <!-- Inicialmente invisível -->
+
+    <!-- Ícone de Perfil no topo direito -->
+    <ImageButton
+        android:id="@+id/profileIcon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/ic_launcher_foreground"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

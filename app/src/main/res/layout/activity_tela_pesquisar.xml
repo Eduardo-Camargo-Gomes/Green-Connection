@@ -33,51 +33,32 @@
             android:id="@+id/pesquisaEntradaEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Pesquisar por id_user ou nó"
-            android:textColor="@color/white" />
+            android:hint="Pesquisar pelo nome da planta"
+            android:textColor="@color/white"
+            android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
+
+    <android.widget.Button
         android:id="@+id/buttonFazerBusca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Buscar"
+        android:textColor="@color/white"
+        android:background="@drawable/button_lightgreenwhite"
         app:layout_constraintTop_toBottomOf="@+id/searchInputLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp" />
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginBottom="36dp"
-        android:contentDescription="@string/descricao_tempo"
-        android:src="@drawable/carbon_time"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageButton
-        android:id="@+id/buttonBuscar"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="36dp"
-        android:contentDescription="@string/descricao_buscar"
-        android:src="@drawable/vector"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/buttonFazerBusca"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonListar"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton" />
-
-    <ImageButton
-        android:id="@+id/buttonListar"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginBottom="36dp"
-        android:contentDescription="@string/descricao_listar"
-        android:src="@drawable/tabler_align_right"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <View
@@ -100,6 +81,41 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/divider2" />
 
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginBottom="36dp"
+        android:contentDescription="@string/descricao_tempo"
+        android:src="@drawable/carbon_time"
+        android:background="?android:attr/selectableItemBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <ImageButton
+        android:id="@+id/buttonBuscar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="36dp"
+        android:contentDescription="@string/descricao_buscar"
+        android:src="@drawable/vector"
+        android:background="?android:attr/selectableItemBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonListar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageButton" />
+
+    <ImageButton
+        android:id="@+id/buttonListar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="36dp"
+        android:contentDescription="@string/descricao_listar"
+        android:background="?android:attr/selectableItemBackground"
+        android:src="@drawable/tabler_align_right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,31 +11,67 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.biometric.BiometricManager
+import androidx.biometric.BiometricPrompt
+import androidx.core.content.ContextCompat
 import com.google.firebase.auth.FirebaseAuth
+import java.util.concurrent.Executor
 
 class MainActivity : AppCompatActivity() {
-    // Variável para autenticação do Firebase
     private lateinit var auth: FirebaseAuth
+    private lateinit var biometricPrompt: BiometricPrompt
+    private lateinit var promptInfo: BiometricPrompt.PromptInfo
+    private lateinit var executor: Executor
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        // Configura a tela para exibição em tela cheia
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-
-        // Define o layout da atividade
         setContentView(R.layout.activity_main)
 
-        // Inicializa o FirebaseAuth
+        // Inicializa FirebaseAuth
         auth = FirebaseAuth.getInstance()
 
-        // Adiciona um atraso de 3 segundos antes de verificar o usuário atual
+        // Configuração da biometria
+        executor = ContextCompat.getMainExecutor(this)
+        biometricPrompt = BiometricPrompt(this, executor,
+            object : BiometricPrompt.AuthenticationCallback() {
+                override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
+                    super.onAuthenticationError(errorCode, errString)
+                    if (errorCode == BiometricPrompt.ERROR_NEGATIVE_BUTTON) {
+                        // Redireciona o usuário para a tela de login com senha
+                        val intent = Intent(this@MainActivity,
+                            TelaLogar::class.java)
+                        startActivity(intent)
+                    } else {
+                        Toast.makeText(applicationContext, "Erro de autenticação: $errString", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
+                    super.onAuthenticationSucceeded(result)
+                    Toast.makeText(applicationContext, "Autenticação bem-sucedida!", Toast.LENGTH_SHORT).show()
+                    abreMenu()
+                }
+
+                override fun onAuthenticationFailed() {
+                    super.onAuthenticationFailed()
+                    Toast.makeText(applicationContext, "Falha na autenticação biométrica", Toast.LENGTH_SHORT).show()
+                }
+            })
+
+        // Configure o prompt para permitir biometria e credenciais do dispositivo (PIN, senha, etc.)
+        promptInfo = BiometricPrompt.PromptInfo.Builder()
+            .setTitle("Autenticação Biométrica")
+            .setSubtitle("Faça login usando sua biometria ou senha")
+            .setAllowedAuthenticators(BiometricManager.Authenticators.BIOMETRIC_STRONG or BiometricManager.Authenticators.DEVICE_CREDENTIAL)
+            .build()
+
+        // Verifica o usuário atual após 3 segundos
         Handler(Looper.getMainLooper()).postDelayed({
-            checkCurrentUser()  // Verificar o usuário após o delay
+            checkCurrentUser()
         }, 3000)
 
-        // Ajusta o padding da view principal para levar em conta as inserções do sistema
-        // (como barras de status e navegação)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -43,32 +79,26 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onStart() {
-        super.onStart()
-    }
-
-    /**
-     * Verifica se há um usuário autenticado no Firebase.
-     * Se houver, abre a tela principal (menu).
-     * Caso contrário, redireciona para a tela introdutória.
-     */
+    // Verifica se há um usuário autenticado no Firebase.
+    // Se houver, solicita autenticação biométrica.
     private fun checkCurrentUser() {
         val currentUser = auth.currentUser
         if (currentUser != null && !TextUtils.isEmpty(currentUser.email)) {
-            // Usuário está logado, mostra uma mensagem de boas-vindas e abre o menu
-            Toast.makeText(baseContext, getString(R.string.user_logged_in, currentUser.email), Toast.LENGTH_SHORT).show()
-            abreMenu()
+            // Se há um usuário logado, solicita autenticação biométrica ou por senha
+            val biometricManager = BiometricManager.from(this)
+            if (biometricManager.canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_STRONG or BiometricManager.Authenticators.DEVICE_CREDENTIAL) ==
+                BiometricManager.BIOMETRIC_SUCCESS) {
+                biometricPrompt.authenticate(promptInfo)
+            } else {
+                abreMenu() // Caso biometria não esteja disponível, continua sem ela
+            }
         } else {
-            // Usuário não está logado, redireciona para a tela introdutória
             val intent = Intent(this, Tela_Introdutoria1::class.java)
             startActivity(intent)
             finish()
         }
     }
 
-    /**
-     * Método para abrir a tela principal após login bem-sucedido
-     */
     private fun abreMenu() {
         val intent = Intent(this, Tela_Menu::class.java)
         startActivity(intent)

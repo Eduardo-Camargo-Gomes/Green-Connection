@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlantDetailsActivity">
+
+    <TextView
+        android:id="@+id/textViewNomePlanta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome da Planta"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/textViewUmidadeAr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Umidade do Ar"
+        app:layout_constraintTop_toBottomOf="@id/textViewNomePlanta"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/textViewUmidadeSolo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Umidade do Solo"
+        app:layout_constraintTop_toBottomOf="@id/textViewUmidadeAr"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/textViewTemperatura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Temperatura"
+        app:layout_constraintTop_toBottomOf="@id/textViewUmidadeSolo"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/textViewMaxTemperatura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Temperatura Máx"
+        app:layout_constraintTop_toBottomOf="@id/textViewTemperatura"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/textViewMinTemperatura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Temperatura Mín"
+        app:layout_constraintTop_toBottomOf="@id/textViewMaxTemperatura"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/textViewMaxUmidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Umidade Máx"
+        app:layout_constraintTop_toBottomOf="@id/textViewMinTemperatura"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/textViewMinUmidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Umidade Mín"
+        app:layout_constraintTop_toBottomOf="@id/textViewMaxUmidade"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="16dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

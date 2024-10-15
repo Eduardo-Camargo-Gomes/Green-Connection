@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -154,6 +155,12 @@ class Tela_Cadastro : AppCompatActivity() {
         if (currentUser != null && !TextUtils.isEmpty(currentUser.email)) {
             Toast.makeText(baseContext, getString(R.string.user_logged_in, currentUser.email), Toast.LENGTH_SHORT).show()
             abreMenu()
+        }
+
+        // Dentro da classe Tela_Cadastro
+        binding.button.setOnClickListener {
+            val intent = Intent(this, TelaLogar::class.java)
+            startActivity(intent)
         }
     }
 }
